@@ -1,0 +1,13 @@
+#1:
+*'id1'
++tipo:'int'
+*'id2'
++tipo:'int'
++parametros:1
++tipoparam1:'int'
++idtabla:2
+*'id3'
++tipo:'int'
+#2:
+*'x'
++tipo:'int'

@@ -1,0 +1,10 @@
+#1:
+*'id1'
++tipo:'chars'
+*'id2'
++tipo:'chars'
+*'id3'
++tipo:'void'
++parametros:0
++idtabla:2
+#2:

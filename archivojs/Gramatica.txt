@@ -1,0 +1,69 @@
+
+Axioma = PP
+
+NoTerminales = { P PP B C T S SP X L Q E EP R RP U UP V VP W WP F H A K Z ZP }
+
+Terminales = { eof { } - / = if return var do while int chars bool ent cad , && &= write prompt > < function salto + * ( ) id }
+
+Producciones = {
+
+	PP -> P
+	P -> B Z P
+	P -> F Z P
+	P -> Z P
+	P -> eof
+	B -> var T id
+	B -> if ( E ) S
+	B -> do { Z C } while ( E )
+	B -> S
+	C -> B Z C
+	C -> lambda
+	T -> int
+	T -> chars
+	T -> bool
+	S -> return X
+	S -> id SP
+	S -> write ( E )
+	S -> prompt ( id )
+	SP -> = E
+	SP -> ( L )
+	SP -> &= E
+	X -> E
+	X -> lambda
+	L -> E Q
+	L -> lambda
+	Q -> , E Q
+	Q -> lambda
+	E -> R EP
+	EP -> && R EP
+	EP -> lambda
+	R -> U RP
+	RP -> < U 
+	RP -> > U 
+	RP -> lambda
+	U -> V UP
+	UP -> + V UP
+	UP -> - V UP
+	UP -> lambda
+	V -> W VP
+	VP -> * W VP
+	VP -> / W VP
+	VP -> lambda
+	W -> id WP
+	W -> ent
+	W -> cad
+	W -> ( E )
+	WP -> ( L )
+	WP -> lambda
+	F -> function H id ( A ) Z { Z C }
+	H -> T
+	H -> lambda
+	A -> T id K
+	A -> lambda
+	K -> , T id K
+	K -> lambda
+	Z -> salto ZP
+	ZP -> salto ZP
+	ZP -> lambda
+	
+}    
